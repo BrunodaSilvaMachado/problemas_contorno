@@ -18,7 +18,7 @@ double q(double x)
 
 double r(double x)
 {
-    return -2*log(x)*pow(x,-2);
+    return -2*pow(x,-2);
     //return sin(log(x))/(double)pow(x,2);
 }
 
