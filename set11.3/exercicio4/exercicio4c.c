@@ -5,21 +5,6 @@
 #define N 20
 #define DEBUG 1
 
-/*double p(double x)
-{
-    return 1.0;
-}
-
-double q(double x)
-{
-    return 2.0;
-}
-
-double r(double x)
-{
-    return cos(x);
-}*/
-
 double p(double x)
 {
     return -4/(double)x;

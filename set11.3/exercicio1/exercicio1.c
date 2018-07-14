@@ -5,25 +5,9 @@
 #define N 4
 #define DEBUG 1
 
-/*double p(double x)
-{
-    return 1.0;
-}
-
-double q(double x)
-{
-    return 2.0;
-}
-
-double r(double x)
-{
-    return cos(x);
-}*/
-
 double p(double x)
 {
     return 0;
-    //return -2.0/(double)x;
 }
 
 double q(double x)
@@ -34,13 +18,11 @@ double q(double x)
 double r(double x)
 {
     return -4*x;
-    //return sin(log(x))/(double)pow(x,2);
 }
 
 int main()
 {
 
-    //double a = 0, alpha = -0.3, b = M_PI_2,beta = -0.1; //condições de contorno
 	FILE *arq = fopen("dados1.txt","w+");
     double a = 0, alpha = 0, b = 1,beta = 2; //condições de contorno
     double h;

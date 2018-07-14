@@ -20,24 +20,6 @@ double r(double x)
     return cos(x);
 }
 
-/*double p(double x)
-{
-    return 0;
-    //return -2.0/(double)x;
-}
-
-double q(double x)
-{
-    return 4.0;
-    //return 2.0/(double)pow(x,2);
-}
-
-double r(double x)
-{
-    return -4.0*x;
-    //return sin(log(x))/(double)pow(x,2);
-}*/
-
 int main()
 {
 
