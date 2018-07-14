@@ -133,7 +133,116 @@ double shootingLinear(char *filename,double a, double b,int n,double alfa,double
 
 O método das diferenças finitas (MDF) é um método de resolução de equações diferenciais que se baseia na aproximação de derivadas por diferenças finitas. A fórmula de aproximação obtém-se da série de Taylor da função derivada. Atualmente, os MDFs são a abordagem dominante das soluções numéricas de equações diferenciais parciais.
 
-O operador de diferenças finitas para derivada pode ser obtido a partir da série de Taylor para as seguintes funções:
+Uma diferença finita é uma expressão da forma f(x + b) - f(x + a), que ao ser dividida por (b - a) chama-se um quociente de diferenças. A técnica de diferenças finitas consiste em aproximar a derivada de uma função via fórmulas discretas que requerem apenas um conjunto finito de pares ordenados xi,yi i=1n, onde geralmente denotamos yi = f(xi).
+Essas fórmulas podem ser obtidas de várias maneiras. Começamos com a fórmula mais simples que pode ser obtida do cálculo diferencial. Seja f uma função diferenciável, a derivada de f no ponto x0 é, por definição,
 
-![mdf1](https://wikimedia.org/api/rest_v1/media/math/render/svg/47dab2c68ecb0a962d5b45620c114b399e187a94)
+f′(x 0) = lim h→0f(x0 + h) - f(x0) h .
+
+Deste limite, tomando h≠0 pequeno (não muito pequeno para evitar o cancelamento catastrófico), é esperado que possamos obter uma aproximação razoável para f′(x 0). Assim, a diferença finita progressiva de ordem 1
+
+D+,hf(x0) := f(x0 + h) - f(x0) h ≈ f′(x 0)
+
+é uma aproximação para f′(x 0).
+
+## Codigo
+
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+#include <linalg.h>
+
+#define N 4
+#define DEBUG 1
+
+double p(double x)
+{
+    return 0;
+}
+
+double q(double x)
+{
+    return 4;
+}
+
+double r(double x)
+{
+    return -4*x;
+}
+
+int main()
+{
+
+	FILE *arq = fopen("dados1.txt","w+");
+    double a = 0, alpha = 0, b = 1,beta = 2; //condições de contorno
+    double h;
+    double x;
+    double **A, *w ;
+    int i;
+
+    h = (b - a)/(double)(N + 1);
+
+    A = (double**)malloc(N * sizeof(double*));
+
+    for(i = 0; i < N;i++)
+    {
+        A[i] = (double*)malloc((N + 1) * sizeof(double));
+    }
+
+	//inicializa valores comuns na matriz
+    for(i = 1;i < N - 1; i++)
+    {
+        x = a + i*h;
+		A[i][i+1] = -1 + h/2.0*p(x); // inicializa a diagonal superior
+        A[i][i] = 2 + h * h* q(x); // inicializa a diagonal principal
+		A[i][i-1] = -1 - h/2.0*p(x); // inicializa a diagonal inferior
+    }
+
+	//inicializa a diagonal principal
+	A[0][0] = 2 + h * h* q(a);  // (ponto superior fora do laço)
+	A[N - 1][N - 1] = 2 + h * h* q(a + (N - 1)*h); //(ponto inferior fora do laço)
+
+	// inicializa a diagonal superior (ponto superior fora do laço)
+	A[0][1] = -1 + h/2.0*p(a);
+
+	// inicializa a diagonal inferior (ponto inferior fora do laço)
+	A[N - 1][N - 2] = -1 - h/2.0*p(a + (N - 2)*h);
+
+    //linha aumentada
+
+    A[0][N] = -h*h*r(a + h) + (1 + h/2.0*p(a + h))*alpha;
+    A[N - 1][N] = -h*h*r(a + N*h) + (1 - h/2.0*p(a + N*h))*beta;
+
+    for(i = 1; i < N - 1; i++)
+    {
+        A[i][N] = -h*h*r(a + (i + 1)*h);
+
+		#if DEBUG
+		printf("%d,%lf\n",i,r(a + (i + 1)*h));
+		#endif //DEBUG
+    }
+
+    imprimeMatriz(A,N,N+1);
+	w = metodoJacobi(A,N,0);
+
+	puts("resultado:");
+	fprintf(arq,"%lf\t%lf\n",a ,alpha);
+	for(i = 0; i < N; i++)
+	{
+		fprintf(arq,"%lf\t%lf\n",a + (i + 1)*h,w[i]);
+		printf("%lf\t%lf\n",a + (i + 1)*h,w[i]);
+	}
+	fprintf(arq,"%lf\t%lf\n",b,beta);
+	puts("\n");
+
+	for(i = 0; i < N; i++)
+	{
+		free(A[i]);
+	}
+
+    return 0;
+}
+``` 
+
+# Resolução dos exercicios do Burden 9 edição
+
 
