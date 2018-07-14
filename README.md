@@ -270,5 +270,20 @@ int main()
 ![fig:11.3ex1a](set11.3/exercicio4/fig11.3.4c.png)  
 
 ![11.3ex5](displaymath/11.3ex5.png)  
-![fig:11.3ex1a](set11.3/exercicio2/fig11.3.5a.png)  
-![fig:11.3ex1b](set11.3/exercicio2/fig11.3.5b.png)  
+![fig:11.3ex5a](set11.3/exercicio5/fig11.3.5a.png)  
+![fig:11.3ex5b](set11.3/exercicio5/fig11.3.5b.png)  
+
+# menções
+
+@thadeupenna
+
+# Referencias
+Problema de valor de contorrno, wikipedia a enciclopedia livre , disponivel em : https://pt.wikipedia.org/wiki/Problema_de_valor_sobre_o_contorno
+
+O Método do Shooting Linear, Universidade Estadual de Maringá - Departamento de Matemática, disponovel em: http://www.dma.uem.br/kit/arquivos/arquivos_pdf/arquivos_pdf/shooting.pdf
+
+Diferenças finias, UFRGS, disponivel em: https://www.ufrgs.br/reamat/CalculoNumerico/livro-oct/dn-diferencas_finitas.html
+
+
+
+
