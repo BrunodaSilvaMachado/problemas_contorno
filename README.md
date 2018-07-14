@@ -41,6 +41,28 @@ Assim, o método do shooting é baseado na substituição do (PVF) por dois prob
 ## Codigo
 
 ``` c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define N 10
+#define TAM 2
+
+double p(double x) //y'
+{
+    return 0;
+}
+
+double q(double x)//y
+{
+    return 4;
+}
+
+double r(double x)//x
+{
+    return -4*x;
+}
+
 double p(double x) //y'
 {
   return 0;
@@ -127,7 +149,18 @@ double shootingLinear(char *filename,double a, double b,int n,double alfa,double
   fclose(arq);
   return 0;
 }
+
+int main()
+{
+    printf("t1\n");
+    shootingLinear("dados1.txt",0,1,2,0,2);
+    printf("t2\n");
+    shootingLinear("dados2.txt",0,1,4,0,2);
+    return 0;
+}
 ```
+
+Este codigo e os demais usados no trbalho esta disponiveis na pasta set11.1 deste repositorio
 
 # Método das diferenças finitas
 
@@ -242,6 +275,7 @@ int main()
     return 0;
 }
 ``` 
+Este codigo e os demais usados no trbalho esta disponiveis na pasta set11.3 deste repositorio
 
 # Resolução dos exercicios do Burden 9 edição
 
@@ -257,6 +291,8 @@ int main()
 
 ![11.1ex7](displaymath/11.1ex7.png)  
 ![fig:11.1ex7](set11.1/exercicio7/fig11.1.7.png)  
+
+## set 11.3
 
 ![11.3ex1](displaymath/11.3ex1.png)  
 ![fig:11.3ex1a](set11.3/exercicio1/fig11.3.1a.png)  
