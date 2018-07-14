@@ -247,4 +247,28 @@ int main()
 
 ## set 11.1
 
-### exercicio 1
+![11.1ex1](displaymath/11.1ex1.png)  
+![fig:11.1ex1a](set11.1/shootingLinear/dados/fig11.1.1a.png)  
+![fig:11.1ex1b](set11.1/shootingLinear/dados/fig11.1.1b.png)  
+
+![11.1ex5](displaymath/11.1ex5.png)  
+![fig:11.1ex5a](set11.1/exercicio5/fig11.1.5a.png)  
+![fig:11.1ex5b](set11.1/exercicio5/fig11.1.5b.png)  
+
+![11.1ex7](displaymath/11.1ex7.png)  
+![fig:11.1ex7](set11.1/exercicio7/fig11.1.7.png)  
+
+![11.3ex1](displaymath/11.3ex1.png)  
+![fig:11.3ex1a](set11.3/exercicio1/fig11.3.1a.png)  
+![fig:11.3ex1b](set11.3/exercicio1/fig11.3.1b.png)  
+
+![11.3ex2](displaymath/11.3ex2.png) 
+![fig:11.3ex1a](set11.3/exercicio2/fig11.3.2a.png)  
+![fig:11.3ex1b](set11.3/exercicio2/fig11.3.2b.png)  
+
+![11.3ex4](displaymath/11.3ex4.png)  
+![fig:11.3ex1a](set11.3/exercicio4/fig11.3.4c.png)  
+
+![11.3ex5](displaymath/11.3ex5.png)  
+![fig:11.3ex1a](set11.3/exercicio2/fig11.3.5a.png)  
+![fig:11.3ex1b](set11.3/exercicio2/fig11.3.5b.png)  
