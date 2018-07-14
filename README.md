@@ -128,3 +128,12 @@ double shootingLinear(char *filename,double a, double b,int n,double alfa,double
   return 0;
 }
 ```
+
+# Método das diferenças finitas
+
+O método das diferenças finitas (MDF) é um método de resolução de equações diferenciais que se baseia na aproximação de derivadas por diferenças finitas. A fórmula de aproximação obtém-se da série de Taylor da função derivada. Atualmente, os MDFs são a abordagem dominante das soluções numéricas de equações diferenciais parciais.
+
+O operador de diferenças finitas para derivada pode ser obtido a partir da série de Taylor para as seguintes funções:
+
+![mdf1](https://wikimedia.org/api/rest_v1/media/math/render/svg/47dab2c68ecb0a962d5b45620c114b399e187a94)
+
